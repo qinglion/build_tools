@@ -10,7 +10,7 @@ import config
 def protect_brunch(branch, repo, strict = False):
   team = '' if strict else 'dep-application-development-leads'
   command = 'echo {"required_status_checks": null,"enforce_admins":true,"required_pull_request_reviews": null,"restrictions": {"users":[],"teams":["'
-  command += team + '"]}} | gh api -X PUT repos/ONLYOFFICE/' + repo + '/branches/' + branch + '/protection --input -'
+  command += team + '"]}} | gh api -X PUT repos/qinglion/' + repo + '/branches/' + branch + '/protection --input -'
   result = base.run_command(command)
   if ('' != result['stderr']):
     print(result['stderr'])
