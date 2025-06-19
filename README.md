@@ -74,6 +74,18 @@ docker run -v $PWD/out:/build_tools/out onlyoffice-document-editors-builder
 
 The result will be available in the `./out` directory.
 
+### Automated Builds with GitHub Actions
+
+This repository includes an automated GitHub workflow that builds the products using Docker and publishes the results as releases:
+
+- **Workflow file**: `.github/workflows/docker-build-release.yml`
+- **Triggers**: 
+  - Automatically when pushing version tags (e.g., `v1.0.0`)
+  - Manually from the GitHub Actions tab
+- **Output**: Compiled products packaged as zip files in GitHub Releases
+
+For detailed usage instructions, see [GitHub Workflow Guide](docs/github-workflow-guide.md).
+
 ### Building and running ONLYOFFICE products separately
 
 #### Document Builder
