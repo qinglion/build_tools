@@ -91,7 +91,7 @@ node_modules
 run with `sdkjs` and `web-apps`
 
 ```bash
-docker run -i -t -p 80:80 --restart=always -e ALLOW_PRIVATE_IP_ADDRESS=true -v $pwd/sdkjs:/var/www/onlyoffice/documentserver/sdkjs -v $pwd/web-apps:/var/www/onlyoffice/documentserver/web-apps documentserver-develop
+docker run -i -t -p 8080:80 --restart=always -e JWT_ENABLED=false -e ALLOW_META_IP_ADDRESS=true -e ALLOW_PRIVATE_IP_ADDRESS=true -v ./sdkjs:/var/www/onlyoffice/documentserver/sdkjs -v ./web-apps:/var/www/onlyoffice/documentserver/web-apps documentserver-develop
 ```
 
 or run with `sdkjs`, `web-apps` and `server`
